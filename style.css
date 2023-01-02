@@ -1,0 +1,296 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*
+  The following two functions are used to convert pixel values to rem and em values.
+  Only intended to be used in instances where designs call for very specific px values that are non-standard.
+  Please use rem and em values by default where possible without using this as a conversion tool.
+*/
+/*
+  Generates a media query according to either a breakpoint or a numerical unit.
+  Checks the breakpoints map.
+  Checks if the numerical value has a valid unit attached to it.
+  Converts all px values entered to em values.
+*/
+body {
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  line-height: 1.2;
+  font-size: clamp(1.5rem, 7.25vw, 3.25rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.825rem;
+}
+
+p {
+  text-align: center;
+  line-height: 1.6;
+}
+p.trial-info {
+  text-align: center;
+  background-color: hsl(248deg, 32%, 49%);
+  padding: 1.125rem 3rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 7px hsla(249deg, 10%, 26%, 0.3);
+}
+p.trial-info span {
+  font-weight: 600;
+}
+
+@media screen and (min-width: 90em) {
+  h1,
+p {
+    text-align: left;
+  }
+}
+body {
+  background-color: hsl(0deg, 100%, 74%);
+  background-image: url(../../images/bg-intro-mobile.png);
+  display: grid;
+  place-content: center;
+}
+@media screen and (min-width: 37.5em) {
+  body {
+    background-image: url(../../images/bg-intro-desktop.png);
+  }
+}
+
+.grid {
+  display: grid;
+  row-gap: 3.5em;
+  width: min(100% - 3rem, 37.5em);
+  margin: 2rem auto;
+}
+@media screen and (min-width: 90em) {
+  .grid {
+    width: 68.75em;
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
+  }
+  .grid__text {
+    align-self: center;
+  }
+}
+
+.form {
+  display: grid;
+  row-gap: 1rem;
+  margin-top: 1.5rem;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 0.5rem;
+  padding: 1.675rem 1.5rem;
+  box-shadow: 0px 10px hsla(249deg, 10%, 26%, 0.3);
+}
+.form__item {
+  position: relative;
+}
+.form__item input {
+  width: 100%;
+  font-weight: 500;
+  border-radius: 0.4rem;
+  border: 1px solid hsl(246deg, 25%, 77%);
+  padding: 0.875rem 1rem;
+}
+.form__item input.error {
+  border-color: hsl(0deg, 100%, 74%);
+  background-image: url(../../images/icon-error.svg);
+  background-repeat: no-repeat;
+  background-position: center right 1rem;
+}
+.form__item input:focus {
+  border: 1px solid hsl(246deg, 25%, 77%);
+  background-image: none;
+}
+.form__error {
+  position: absolute;
+  color: hsl(0deg, 100%, 74%);
+  right: 5px;
+  bottom: -18px;
+  font-size: 0.825rem;
+  font-weight: 500;
+}
+.form p {
+  text-align: center;
+  margin-inline: 1.4rem;
+  color: hsl(246deg, 25%, 77%);
+  font-weight: 500;
+  font-size: 0.825rem;
+  margin-top: -2px;
+  line-height: 1;
+}
+.form p a {
+  font-weight: 600;
+}
+@media screen and (min-width: 90em) {
+  .form {
+    row-gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+}
+
+.button {
+  background-color: hsl(154deg, 59%, 51%);
+  border: none;
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px hsl(154deg, 59%, 41%);
+  transition: 200ms background-color, transform, box-shadow ease-in-out;
+}
+.button:is(:hover, :focus) {
+  cursor: pointer;
+  background-color: hsl(154deg, 59%, 61%);
+}
+.button:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.clr-primary-red-400 {
+  color: hsl(0deg, 100%, 74%);
+}
+
+.bg-primary-red-400 {
+  background-color: hsl(0deg, 100%, 74%);
+}
+
+.clr-primary-green-300 {
+  color: hsl(154deg, 59%, 61%);
+}
+
+.bg-primary-green-300 {
+  background-color: hsl(154deg, 59%, 61%);
+}
+
+.clr-primary-green-400 {
+  color: hsl(154deg, 59%, 51%);
+}
+
+.bg-primary-green-400 {
+  background-color: hsl(154deg, 59%, 51%);
+}
+
+.clr-primary-green-500 {
+  color: hsl(154deg, 59%, 41%);
+}
+
+.bg-primary-green-500 {
+  background-color: hsl(154deg, 59%, 41%);
+}
+
+.clr-accent-blue-400 {
+  color: hsl(248deg, 32%, 49%);
+}
+
+.bg-accent-blue-400 {
+  background-color: hsl(248deg, 32%, 49%);
+}
+
+.clr-neutral-100 {
+  color: hsl(0deg, 0%, 100%);
+}
+
+.bg-neutral-100 {
+  background-color: hsl(0deg, 0%, 100%);
+}
+
+.clr-neutral-200 {
+  color: hsl(246deg, 25%, 77%);
+}
+
+.bg-neutral-200 {
+  background-color: hsl(246deg, 25%, 77%);
+}
+
+.clr-neutral-400 {
+  color: hsla(249deg, 10%, 26%, 0.3);
+}
+
+.bg-neutral-400 {
+  background-color: hsla(249deg, 10%, 26%, 0.3);
+}/*# sourceMappingURL=style.css.map */

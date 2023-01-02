@@ -1,0 +1,12 @@
+@use "functions" as *;
+
+$fs-regular: 1rem;
+$fs-heading: clamp(1.5rem, 7.25vw, 3.25rem);
+$fs-tandc: 0.825rem;
+
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+
+$ff-default: "Poppins", sans-serif;

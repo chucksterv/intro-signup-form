@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+.button {
+  background-color: clr(primary, "green-400");
+  border: none;
+  color: clr(neutral, 100);
+  text-transform: uppercase;
+  font-weight: $fw-500;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px clr(primary, "green-500");
+  transition: 200ms background-color, transform, box-shadow ease-in-out;
+
+  &:is(:hover, :focus) {
+    cursor: pointer;
+    background-color: clr(primary, "green-300");
+  }
+
+  &:active {
+    transform: translateY(4px);
+    box-shadow: none;
+  }
+}

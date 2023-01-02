@@ -1,0 +1,18 @@
+@use "../abstracts/" as *;
+
+.grid {
+  display: grid;
+  row-gap: 3.5em;
+  width: min(100% - 3rem, em(600px));
+  margin: 2rem auto;
+
+  @include mq(lg) {
+    width: em(1100px);
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+
+    &__text {
+      align-self: center;
+    }
+  }
+}
